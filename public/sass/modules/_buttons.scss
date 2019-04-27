@@ -5,12 +5,27 @@
   color: $blue;
   font-size: 1.125rem;
   font-weight: bold;
-  padding: 1rem 2.5rem;
+  max-width: 100%;
+  padding: 1rem 4rem;
   transition: all .5s;
 
+  @include media-breakpoint-up(md) {
+    padding: 1rem 7rem;
+  }
+
   &:hover {
-    background-color: $blue;
+    background-color: $blue !important;
+    border: 3px solid $blue !important;
     color: #fff;
+    padding: 1rem 4rem !important;
+
+    @include media-breakpoint-up(md) {
+      padding: 1rem 7rem !important;
+    }
+
+    &:after {
+      content: none;
+    }
   }
 }
 
@@ -21,27 +36,58 @@
   color: #fff;
   font-size: 1.125rem;
   font-weight: bold;
-  padding: 1rem 2.5rem;
+  max-width: 100%;
+  padding: 1rem 4rem;
   transition: all .5s;
 
+  @include media-breakpoint-up(md) {
+    padding: 1rem 7rem;
+  }
+
   &:hover {
-    background-color: #fff;
-    color: $blue;
+    background-color: #fff !important;
+    border: 3px solid $blue !important;
+    color: $blue !important;
+    padding: 1rem 4rem !important;
+
+    @include media-breakpoint-up(md) {
+      padding: 1rem 7rem !important;
+    }
+
+    &:after {
+      content: none;
+    }
   }
 }
 
 .btn-green {
   background: linear-gradient(180deg, #6BE8AB 0%, #29C8FB 100%);
-  border: 3px solid transparent;
+  border: 3px solid #fff;
   border-radius: 50px;
   color: #fff;
   font-size: 1.125rem;
   font-weight: bold;
-  padding: 1rem 2.5rem;
+  max-width: 100%;
+  padding: 1rem 4rem;
   transition: all .5s;
 
+  @include media-breakpoint-up(md) {
+    padding: 1rem 7rem;
+  }
+
   &:hover {
-    background-color: #fff;
-    color: $blue;
+    background: #fff !important;
+    border: 3px solid $blue !important;
+    color: $blue !important;
+
+    padding: 1rem 4rem !important;
+
+    @include media-breakpoint-up(md) {
+      padding: 1rem 7rem !important;
+    }
+
+    &:after {
+      content: none;
+    }
   }
 }

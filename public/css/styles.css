@@ -2495,6 +2495,9 @@ html {
 /*----------------
 - Silent Classes -
 ----------------*/
+body {
+  font-family: 'Titillium Web', sans-serif; }
+
 h1,
 h2,
 h3,
@@ -2522,8 +2525,8 @@ p {
   font-size: 1.125rem; }
 
 a {
-  border-bottom: 1px solid #F6FAFF;
-  color: #F6FAFF;
+  border-bottom: 1px solid #328093;
+  color: #328093;
   font-size: 1.125rem;
   text-decoration: none;
   transition: color .5s, border-bottom .5s; }
@@ -2543,11 +2546,22 @@ input {
   color: #244474;
   font-size: 1.125rem;
   font-weight: bold;
-  padding: 1rem 2.5rem;
+  max-width: 100%;
+  padding: 1rem 4rem;
   transition: all .5s; }
+  @media (min-width: 768px) {
+    .btn {
+      padding: 1rem 7rem; } }
   .btn:hover {
-    background-color: #244474;
-    color: #fff; }
+    background-color: #244474 !important;
+    border: 3px solid #244474 !important;
+    color: #fff;
+    padding: 1rem 4rem !important; }
+    @media (min-width: 768px) {
+      .btn:hover {
+        padding: 1rem 7rem !important; } }
+    .btn:hover:after {
+      content: none; }
 
 .btn-inverse {
   background-color: #244474;
@@ -2556,24 +2570,46 @@ input {
   color: #fff;
   font-size: 1.125rem;
   font-weight: bold;
-  padding: 1rem 2.5rem;
+  max-width: 100%;
+  padding: 1rem 4rem;
   transition: all .5s; }
+  @media (min-width: 768px) {
+    .btn-inverse {
+      padding: 1rem 7rem; } }
   .btn-inverse:hover {
-    background-color: #fff;
-    color: #244474; }
+    background-color: #fff !important;
+    border: 3px solid #244474 !important;
+    color: #244474 !important;
+    padding: 1rem 4rem !important; }
+    @media (min-width: 768px) {
+      .btn-inverse:hover {
+        padding: 1rem 7rem !important; } }
+    .btn-inverse:hover:after {
+      content: none; }
 
 .btn-green {
   background: linear-gradient(180deg, #6BE8AB 0%, #29C8FB 100%);
-  border: 3px solid transparent;
+  border: 3px solid #fff;
   border-radius: 50px;
   color: #fff;
   font-size: 1.125rem;
   font-weight: bold;
-  padding: 1rem 2.5rem;
+  max-width: 100%;
+  padding: 1rem 4rem;
   transition: all .5s; }
+  @media (min-width: 768px) {
+    .btn-green {
+      padding: 1rem 7rem; } }
   .btn-green:hover {
-    background-color: #fff;
-    color: #244474; }
+    background: #fff !important;
+    border: 3px solid #244474 !important;
+    color: #244474 !important;
+    padding: 1rem 4rem !important; }
+    @media (min-width: 768px) {
+      .btn-green:hover {
+        padding: 1rem 7rem !important; } }
+    .btn-green:hover:after {
+      content: none; }
 
 .bg-black {
   background-color: #000; }
