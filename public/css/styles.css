@@ -2625,7 +2625,7 @@ input {
   background-position: center;
   background-repeat: no-repeat;
   background-size: cover;
-  display: block;
+  display: block !important;
   color: transparent;
   padding: 0 !important;
   cursor: pointer;
@@ -2640,9 +2640,57 @@ input {
     .btn-scroll:hover:after {
       content: none; }
 
+.list-events .ecs-event-list {
+  list-style: none; }
+  .list-events .ecs-event-list .ecs-event {
+    display: inline-flex;
+    flex-direction: row-reverse;
+    box-shadow: 4px 4px 4px rgba(0, 0, 0, 0.25); }
+    .list-events .ecs-event-list .ecs-event .entry-title {
+      padding: 0;
+      text-align: center; }
+    .list-events .ecs-event-list .ecs-event .entry-title,
+    .list-events .ecs-event-list .ecs-event .duration {
+      border: 2px solid #328093;
+      text-decoration: none;
+      flex: 1;
+      display: flex;
+      align-items: center;
+      justify-content: center; }
+    .list-events .ecs-event-list .ecs-event .duration {
+      border-right: 0;
+      font-size: 1.6rem; }
+    .list-events .ecs-event-list .ecs-event .entry-title a {
+      text-decoration: none;
+      border-bottom: 0;
+      font-size: 1.3rem; }
+      .list-events .ecs-event-list .ecs-event .entry-title a:hover {
+        border-bottom: 0; }
+
+.card-community__content h2,
+.card-community__content h3,
+.card-community__content h4 {
+  color: #244474;
+  font-size: 1.125rem;
+  text-transform: uppercase;
+  margin-bottom: 1rem; }
+
+.card-community__image {
+  display: flex;
+  justify-content: center; }
+  @media screen and (min-width: 981px) {
+    .card-community__image {
+      justify-content: flex-end; } }
+  .card-community__image img {
+    border-radius: 50%;
+    object-fit: cover;
+    height: 150px;
+    width: 150px; }
+
 .banner-main {
   align-items: center;
   display: flex;
+  flex-direction: column;
   justify-content: center;
   min-height: 79vh; }
   .banner-main .et_pb_text_inner {
