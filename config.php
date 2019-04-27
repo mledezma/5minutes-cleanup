@@ -26,11 +26,14 @@
   // if (!$WP_ENV) {
   //   $WP_ENV = 'production';
   // }
-  if ( $_SERVER["SERVER_ADDR"] == '127.0.0.1' || $_SERVER["SERVER_ADDR"] == '::1') {
+
+  // if ( $_SERVER["SERVER_ADDR"] == '127.0.0.1' || $_SERVER["SERVER_ADDR"] == '::1') {
+  //   $WP_ENV = 'development';
+  // } else {
+  //   $WP_ENV = 'production';
+  // }
+
     $WP_ENV = 'development';
-  } else {
-    $WP_ENV = 'production';
-  }
 
   /**
   * Development o Production files
@@ -41,8 +44,8 @@
     $preRootImg =  '/public-build/img';
     $preRootVideo =  '/public-build/video';
 
-    $assets_css = $preRootCss.'/styles.min.css?_=';
-    $assets_js = $preRootJS.'/main.bundle.min.js?_=';
+    $assets_css = $preRootCss.'/styles.min.css';
+    $assets_js = $preRootJS.'/main.bundle.min.js';
   }
 
   /**

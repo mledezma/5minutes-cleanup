@@ -2543,6 +2543,7 @@ input {
   color: #244474;
   font-size: 1.125rem;
   font-weight: bold;
+  padding: 1rem 2.5rem;
   transition: all .5s; }
   .btn:hover {
     background-color: #244474;
@@ -2555,6 +2556,7 @@ input {
   color: #fff;
   font-size: 1.125rem;
   font-weight: bold;
+  padding: 1rem 2.5rem;
   transition: all .5s; }
   .btn-inverse:hover {
     background-color: #fff;
@@ -2567,6 +2569,7 @@ input {
   color: #fff;
   font-size: 1.125rem;
   font-weight: bold;
+  padding: 1rem 2.5rem;
   transition: all .5s; }
   .btn-green:hover {
     background-color: #fff;
