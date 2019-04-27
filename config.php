@@ -9,10 +9,6 @@
   $fbogm = new stdClass;
   $fbogm->img = 'TODO';
 
-  $get_assets = file_get_contents(get_stylesheet_directory_uri() . '/package.json');
-  $json = json_decode($get_assets, true);
-  $version = $json['version'];
-
   $preRootJS = '/public/js';
   $preRootCss =  '/public/css';
   $preRootImg =  '/public/img';
@@ -45,8 +41,8 @@
     $preRootImg =  '/public-build/img';
     $preRootVideo =  '/public-build/video';
 
-    $assets_css = $preRootCss.'/styles.min.css?_=' . $version;
-    $assets_js = $preRootJS.'/main.bundle.min.js?_=' . $version;
+    $assets_css = $preRootCss.'/styles.min.css?_=';
+    $assets_js = $preRootJS.'/main.bundle.min.js?_=';
   }
 
   /**
