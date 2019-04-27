@@ -33,7 +33,7 @@
   //   $WP_ENV = 'production';
   // }
 
-    $WP_ENV = 'development';
+    $WP_ENV = 'production';
 
   /**
   * Development o Production files
