@@ -1,26 +1,19 @@
 const gulp = require('gulp');
 const browserify = require('browserify');
-const runSequence = require('run-sequence');
 const gutil = require('gulp-util');
 const sass = require('gulp-sass');
 const source = require('vinyl-source-stream');
 const rename = require('gulp-rename');
-const aliasify = require('aliasify');
 const uglify = require('gulp-uglify');
 const cssnano = require('gulp-cssnano');
 const es = require('event-stream');
 const todo = require('gulp-todo');
 const imagemin = require('gulp-imagemin');
-const pngquant = require('imagemin-pngquant');
 const rimraf = require('gulp-rimraf');
-const copy = require('gulp-copy');
 const semistandard = require('gulp-semistandard');
-const pkg = require('./package.json');
-const babel = require('gulp-babel');
 const livereload = require('gulp-livereload');
 const autoprefixer = require('gulp-autoprefixer');
-
-const config = { pkg };
+const babelify = require('babelify');
 
 const paths = {
   styles: './public/sass/**/*.scss',
@@ -28,7 +21,7 @@ const paths = {
 
   images: './public/img/**/*',
 
-  toCopyIntoPublicBuild: ['./public/fonts/**/*'],
+  toCopyIntoPublicBuild: ['./public/fonts/**/*', './public/svg/**/*'],
 
   video: ['./public/video/**/*'],
 
@@ -59,7 +52,8 @@ const paths = {
 // clean
 gulp.task('clean', () => (
   gulp.src('./public-build', {
-    read: false
+    read: false,
+    allowEmpty: true
   })
     .pipe(rimraf())
 ));
@@ -81,7 +75,7 @@ gulp.task('semistandard', (cb) => {
     .pipe(semistandard.reporter('default', {}));
 });
 
-gulp.task('watch:semistandard', () => gulp.watch(paths.semistandard, ['semistandard']));
+gulp.task('watch:semistandard', () => gulp.watch(paths.semistandard, gulp.series('semistandard')));
 
 // sass
 gulp.task('sass', (cb) => {
@@ -98,7 +92,7 @@ gulp.task('sass', (cb) => {
 
 gulp.task('watch:sass', () => {
   livereload.listen(35729);
-  gulp.watch(paths.styles, ['sass']);
+  gulp.watch(paths.styles, gulp.series('sass'));
 });
 
 // cssnano
@@ -119,15 +113,17 @@ gulp.task('cssnano', (cb) => {
 // imgoptim
 gulp.task('imgoptim', (cb) => {
   gulp.src(paths.images)
-    // .pipe(imagemin({
-    //   progressive: true,
-    //   svgoPlugins: [{
-    //     removeViewBox: false
-    //   }, {
-    //     cleanupIDs: false
-    //   }],
-    //   use: [pngquant()]
-    // }))
+    .pipe(imagemin([
+      imagemin.gifsicle({interlaced: true}),
+      imagemin.jpegtran({progressive: true}),
+      imagemin.optipng({optimizationLevel: 5}),
+      imagemin.svgo({
+        plugins: [
+          {removeViewBox: true},
+          {cleanupIDs: false}
+        ]
+      })
+    ]))
     .pipe(gulp.dest('./public-build/img/'))
     .on('end', cb);
 });
@@ -138,7 +134,9 @@ gulp.task('browserify', (cb) => {
     entries: [entry],
     debug: true
   })
-    .transform("babelify", {presets: ["@babel/preset-env"]})
+    .transform(babelify.configure({
+      'presets': ['@babel/preset-env']
+    }))
     .bundle()
     .on('error', (e) => {
       gutil.log(e);
@@ -156,7 +154,7 @@ gulp.task('browserify', (cb) => {
 });
 
 gulp.task('watch:browserify', () => {
-  gulp.watch(paths.browseryFiles.watch, ['browserify']);
+  gulp.watch(paths.browseryFiles.watch, gulp.series('browserify'));
 });
 
 // uglify
@@ -171,42 +169,45 @@ gulp.task('uglify', (cb) => {
     .on('end', cb);
 });
 
-// copy remaining folders into public-build
+// copy remaining folders into build
 gulp.task('copy', (cb) => {
-  gulp.src(paths.toCopyIntoPublicBuild)
-    .pipe(gulp.dest('./public-build/fonts'))
+  return gulp.src(paths.toCopyIntoPublicBuild, { base: 'public' })
+    .pipe(gulp.dest('./public-build/'))
     // .pipe(copy('./public-build/'))
     .on('end', cb);
 });
 
-// copy video into public-build
+// copy video into build
 gulp.task('video', (cb) => {
   gulp.src(paths.video)
     .pipe(gulp.dest('./public-build/video'))
     .on('end', cb);
 });
 
-// copy video into public-build
-gulp.task('video', (cb) => {
-  gulp.src(paths.video)
-    .pipe(gulp.dest('./public-build/video'))
-    .on('end', cb);
+// copy remaining folders into build
+gulp.task('copy', (cb) => {
+ gulp.src(paths.toCopyIntoPublicBuild, {base:"public"})
+   .pipe(gulp.dest('./public-build/'))
+   .on('end', cb);
 });
 
 // gulp.task('watch', ['watch:sass', 'watch:semistandard']);
-gulp.task('watch', ['watch:sass', 'watch:semistandard', 'watch:browserify']);
+gulp.task('watch', gulp.parallel('watch:sass', 'watch:semistandard', 'watch:browserify'));
 
-gulp.task('production', (cb) => {
-  runSequence(
-    'clean',
-    'todo',
-    'sass',
-    'cssnano',
-    'imgoptim',
-    'uglify',
-    'copy',
-    'video',
-    cb);
-});
+gulp.task('refresh', gulp.series(
+  'sass',
+  'browserify'
+));
 
-gulp.task('default', ['watch']);
+gulp.task('production', gulp.series(
+  'clean',
+  'todo',
+  'sass',
+  'cssnano',
+  'imgoptim',
+  'uglify',
+  'copy'
+));
+
+
+gulp.task('default', gulp.series(['watch']));
