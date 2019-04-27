@@ -1,0 +1,39 @@
+.list-events .ecs-event-list {
+	list-style: none;
+
+	.ecs-event {
+		display: inline-flex;
+		flex-direction: row-reverse;
+		box-shadow: 4px 4px 4px rgba(0, 0, 0, 0.25);
+
+		.entry-title {
+			padding: 0;
+			text-align: center;
+		}
+
+		.entry-title,
+		.duration {
+			border: 2px solid $lightBlue;
+		    text-decoration: none;
+		    flex: 1;
+		    display: flex;
+		    align-items: center;
+		    justify-content: center;
+		}
+
+		.duration {
+			border-right: 0;
+			font-size: 1.6rem;
+		}
+
+		.entry-title a {
+			text-decoration: none;
+			border-bottom: 0;
+			font-size: 1.3rem;
+
+			&:hover {
+				border-bottom: 0;
+			}
+		}
+	}
+}
