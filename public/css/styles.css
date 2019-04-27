@@ -2539,6 +2539,15 @@ input {
   color: #000;
   padding-bottom: 5px; }
 
+.home__hero {
+  text-align: center; }
+  .home__hero h1,
+  .home__hero p {
+    color: white; }
+
+.home__video {
+  text-align: center; }
+
 .btn {
   background-color: #fff;
   border: 3px solid #244474;
