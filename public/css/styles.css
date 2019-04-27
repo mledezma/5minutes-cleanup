@@ -13,6 +13,7 @@
  * Copyright 2011-2019 Twitter, Inc.
  * Licensed under MIT (https://github.com/twbs/bootstrap/blob/master/LICENSE)
  */
+@import url("https://fonts.googleapis.com/css?family=Raleway:400,700|Titillium+Web:400,400i,700");
 html {
   box-sizing: border-box;
   -ms-overflow-style: scrollbar; }
@@ -2494,6 +2495,83 @@ html {
 /*----------------
 - Silent Classes -
 ----------------*/
+h1,
+h2,
+h3,
+h4,
+h5,
+h6 {
+  font-family: 'Raleway', sans-serif; }
+
+h1 {
+  font-size: 4.5rem; }
+
+h2 {
+  font-size: 3rem; }
+
+h3 {
+  font-size: 2.062rem; }
+
+h4 {
+  font-size: 1.5rem; }
+
+h5 {
+  font-size: 1.125rem; }
+
+p {
+  font-size: 1.125rem; }
+
+a {
+  border-bottom: 1px solid #F6FAFF;
+  color: #F6FAFF;
+  font-size: 1.125rem;
+  text-decoration: none;
+  transition: color .5s, border-bottom .5s; }
+  a:hover {
+    border-bottom: 1px solid #244474;
+    color: #244474; }
+
+input {
+  border-bottom: 1px solid #000;
+  color: #000;
+  padding-bottom: 5px; }
+
+.btn {
+  background-color: #fff;
+  border: 3px solid #244474;
+  border-radius: 50px;
+  color: #244474;
+  font-size: 1.125rem;
+  font-weight: bold;
+  transition: all .5s; }
+  .btn:hover {
+    background-color: #244474;
+    color: #fff; }
+
+.btn-inverse {
+  background-color: #244474;
+  border: 3px solid #244474;
+  border-radius: 50px;
+  color: #fff;
+  font-size: 1.125rem;
+  font-weight: bold;
+  transition: all .5s; }
+  .btn-inverse:hover {
+    background-color: #fff;
+    color: #244474; }
+
+.btn-green {
+  background: linear-gradient(180deg, #6BE8AB 0%, #29C8FB 100%);
+  border: 3px solid transparent;
+  border-radius: 50px;
+  color: #fff;
+  font-size: 1.125rem;
+  font-weight: bold;
+  transition: all .5s; }
+  .btn-green:hover {
+    background-color: #fff;
+    color: #244474; }
+
 .bg-black {
   background-color: #000; }
 

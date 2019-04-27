@@ -1,0 +1,44 @@
+.btn {
+  background-color: #fff;
+  border: 3px solid $blue;
+  border-radius: 50px;
+  color: $blue;
+  font-size: 1.125rem;
+  font-weight: bold;
+  transition: all .5s;
+
+  &:hover {
+    background-color: $blue;
+    color: #fff;
+  }
+}
+
+.btn-inverse {
+  background-color: $blue;
+  border: 3px solid $blue;
+  border-radius: 50px;
+  color: #fff;
+  font-size: 1.125rem;
+  font-weight: bold;
+  transition: all .5s;
+
+  &:hover {
+    background-color: #fff;
+    color: $blue;
+  }
+}
+
+.btn-green {
+  background: linear-gradient(180deg, #6BE8AB 0%, #29C8FB 100%);
+  border: 3px solid transparent;
+  border-radius: 50px;
+  color: #fff;
+  font-size: 1.125rem;
+  font-weight: bold;
+  transition: all .5s;
+
+  &:hover {
+    background-color: #fff;
+    color: $blue;
+  }
+}

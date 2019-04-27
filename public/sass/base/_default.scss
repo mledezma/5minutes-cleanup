@@ -1,0 +1,51 @@
+h1,
+h2,
+h3,
+h4,
+h5,
+h6 {
+  font-family: 'Raleway', sans-serif;
+}
+
+h1 {
+  font-size: 4.5rem;
+}
+
+h2 {
+  font-size: 3rem;
+}
+
+h3 {
+  font-size: 2.062rem;
+}
+
+h4 {
+  font-size: 1.5rem;
+}
+
+h5 {
+  font-size: 1.125rem;
+}
+
+p {
+  font-size: 1.125rem;
+}
+
+a {
+  border-bottom: 1px solid $lightBlue;
+  color: $lightBlue;
+  font-size: 1.125rem;
+  text-decoration: none;
+  transition: color .5s, border-bottom .5s;
+
+  &:hover {
+    border-bottom: 1px solid $blue;
+    color: $blue;
+  }
+}
+
+input {
+  border-bottom: 1px solid $black;
+  color: $black;
+  padding-bottom: 5px;
+}
