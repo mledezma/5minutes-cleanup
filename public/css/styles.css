@@ -2551,7 +2551,6 @@ input {
 .btn {
   background-color: #fff;
   border: 3px solid #244474;
-  border-radius: 50px;
   color: #244474;
   font-size: 1.125rem;
   font-weight: bold;
@@ -2575,7 +2574,6 @@ input {
 .btn-inverse {
   background-color: #244474;
   border: 3px solid #244474;
-  border-radius: 50px;
   color: #fff;
   font-size: 1.125rem;
   font-weight: bold;
@@ -2599,24 +2597,26 @@ input {
 .btn-green {
   background: linear-gradient(180deg, #6BE8AB 0%, #29C8FB 100%);
   border: 3px solid #fff;
-  border-radius: 50px;
   color: #fff;
   font-size: 1.125rem;
   font-weight: bold;
   max-width: 100%;
   padding: 1rem 4rem;
-  transition: all .5s; }
+  transition: color .5s; }
   @media (min-width: 768px) {
     .btn-green {
-      padding: 1rem 7rem; } }
+      padding: 1.3rem 7rem; } }
   .btn-green:hover {
-    background: #fff !important;
-    border: 3px solid #244474 !important;
+    background-image: url("data:image/svg+xml,%3Csvg version='1.1' id='Layer_1' xmlns='http://www.w3.org/2000/svg' xmlns:xlink='http://www.w3.org/1999/xlink' x='0px' y='0px' viewBox='0 0 161 42' style='enable-background:new 0 0 161 42;' xml:space='preserve'%3E%3Cstyle type='text/css'%3E .st0%7Bfill:%23FFFFFF;stroke:url(%23SVGID_1_);stroke-width:3;%7D%0A%3C/style%3E%3ClinearGradient id='SVGID_1_' gradientUnits='userSpaceOnUse' x1='80.5753' y1='-0.3058' x2='80.5753' y2='42.1523'%3E%3Cstop offset='0' style='stop-color:%2329C8FB'/%3E%3Cstop offset='1' style='stop-color:%236BE8AB'/%3E%3C/linearGradient%3E%3Crect x='1.6' y='1.2' class='st0' width='158' height='39.5'/%3E%3C/svg%3E%0A");
+    background-repeat: no-repeat;
+    background-size: 280px 80px;
+    background-position: center;
+    border: 3px solid #fff !important;
     color: #244474 !important;
     padding: 1rem 4rem !important; }
     @media (min-width: 768px) {
       .btn-green:hover {
-        padding: 1rem 7rem !important; } }
+        padding: 1.3rem 7rem !important; } }
     .btn-green:hover:after {
       content: none; }
 
