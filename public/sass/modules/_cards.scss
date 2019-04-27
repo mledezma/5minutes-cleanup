@@ -1,0 +1,26 @@
+.card-community__content {
+  h2,
+  h3,
+  h4 {
+    color: $blue;
+    font-size: 1.125rem;
+    text-transform: uppercase;
+    margin-bottom: 1rem;
+  }
+}
+
+.card-community__image {
+  display: flex;
+  justify-content: center;
+
+  @media screen and (min-width: 981px) {
+    justify-content: flex-end;
+  }
+
+  img {
+    border-radius: 50%;
+    object-fit: cover;
+    height: 150px;
+    width: 150px;
+  }
+}
