@@ -58,5 +58,6 @@
  $GLOBALS['video'] = $preRootVideo;
  $GLOBALS['forms'] = [];
  $GLOBALS['tabs'] = 1;
+ $GLOBALS['wp_env'] = $WP_ENV;
 
  ?>

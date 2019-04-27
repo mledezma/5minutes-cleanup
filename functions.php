@@ -6,6 +6,7 @@ function divichild_enqueue_scripts() {
 
   $css = $GLOBALS['css'];
   $js = $GLOBALS['js'];
+  $WP_ENV = $GLOBALS['wp_env'];
 
   wp_enqueue_style('css', get_stylesheet_directory_uri() . $css, false, null);
   wp_enqueue_script('script', get_stylesheet_directory_uri() . $js, null, true);
@@ -13,7 +14,7 @@ function divichild_enqueue_scripts() {
   /**
    * Adds livereload and local styles for local enviroment
   **/
-  if (in_array($_SERVER['REMOTE_ADDR'], array('127.0.0.1', '::1'))) {
+  if ($WP_ENV === 'development') {
     wp_register_script('livereload', 'http://localhost:35729/livereload.js?snipver=1', null, false, true);
     wp_enqueue_script('livereload');
   }
