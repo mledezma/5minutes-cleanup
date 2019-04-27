@@ -2540,13 +2540,12 @@ input {
   color: #000;
   padding-bottom: 5px; }
 
-.home__hero {
+.home__hero h1,
+.home__hero p {
+  color: white;
   text-align: center; }
-  .home__hero h1,
-  .home__hero p {
-    color: white; }
 
-.home__video {
+.home__video h2 {
   text-align: center; }
 
 .btn {
