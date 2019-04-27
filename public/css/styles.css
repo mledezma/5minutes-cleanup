@@ -2614,8 +2614,26 @@ input {
 .bg-black {
   background-color: #000; }
 
+.bg-blue {
+  background-color: #244474; }
+
+.bg-lightblue {
+  background-color: #328093; }
+
+.bg-gris {
+  background-color: #F6FAFF; }
+
 .text-black {
   color: #000; }
+
+.text-blue {
+  color: #244474; }
+
+.text-lightblue {
+  color: #328093; }
+
+.text-gris {
+  color: #F6FAFF; }
 
 .w-0 {
   width: 0px; }
