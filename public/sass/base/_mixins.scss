@@ -1,0 +1,5 @@
+@mixin globe-icon($color) {
+  $color: replaceFirst('#{$color}', '%23');
+
+  background-image: url("");
+}

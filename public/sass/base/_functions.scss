@@ -1,0 +1,10 @@
+@function slice($string, $start) {
+  $end: str-length($string);
+  @return str-slice($string, $start, $end);
+}
+
+@function replaceFirst($string, $replace) {
+  $end: str-length($string);
+  $current: str-slice($string, 2, $end);
+  @return str-insert($current, $replace, 1)
+}

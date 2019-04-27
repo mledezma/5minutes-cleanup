@@ -1,0 +1,35 @@
+@each $val in $sizes {
+  $suffix: px !default;
+
+  @if $val == auto {
+    $suffix: null;
+  }
+
+  .w-#{$val} {
+    width: #{$val}$suffix;
+  }
+  .h-#{$val} {
+    height: #{$val}$suffix;
+  }
+  .minw-#{$val} {
+    min-width: #{$val}$suffix;
+  }
+  .minh-#{$val} {
+    min-height: #{$val}$suffix;
+  }
+  .maxw-#{$val} {
+    max-width: #{$val}$suffix;
+  }
+  .maxh-#{$val} {
+    max-height: #{$val}$suffix;
+  }
+
+  @include media-breakpoint-up($mainBreakpoint) {
+    .minh-lg-#{$val} {
+      min-height: #{$val}$suffix;
+    }
+    .maxh-lg-#{$val} {
+      max-height: #{$val}$suffix;
+    }
+  }
+}
