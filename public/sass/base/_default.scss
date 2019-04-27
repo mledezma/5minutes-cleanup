@@ -9,6 +9,7 @@ h4,
 h5,
 h6 {
   font-family: 'Raleway', sans-serif;
+  font-weight: 600;
 }
 
 h1 {
@@ -35,16 +36,18 @@ p {
   font-size: 1.125rem;
 }
 
-a {
-  border-bottom: 1px solid $lightBlue;
-  color: $lightBlue;
-  font-size: 1.125rem;
-  text-decoration: none;
-  transition: color .5s, border-bottom .5s;
+.et_pb_text_inner {
+  a {
+    border-bottom: 1px solid $lightBlue;
+    color: $lightBlue;
+    font-size: 1.125rem;
+    text-decoration: none;
+    transition: color .5s, border-bottom .5s;
 
-  &:hover {
-    border-bottom: 1px solid $blue;
-    color: $blue;
+    &:hover {
+      border-bottom: 1px solid $blue;
+      color: $blue;
+    }
   }
 }
 

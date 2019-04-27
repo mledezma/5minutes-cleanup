@@ -13,7 +13,7 @@
  * Copyright 2011-2019 Twitter, Inc.
  * Licensed under MIT (https://github.com/twbs/bootstrap/blob/master/LICENSE)
  */
-@import url("https://fonts.googleapis.com/css?family=Raleway:400,700|Titillium+Web:400,400i,700");
+@import url("https://fonts.googleapis.com/css?family=Raleway:400,600,700|Titillium+Web:400,400i,700");
 html {
   box-sizing: border-box;
   -ms-overflow-style: scrollbar; }
@@ -2504,7 +2504,8 @@ h3,
 h4,
 h5,
 h6 {
-  font-family: 'Raleway', sans-serif; }
+  font-family: 'Raleway', sans-serif;
+  font-weight: 600; }
 
 h1 {
   font-size: 4.5rem; }
@@ -2524,13 +2525,13 @@ h5 {
 p {
   font-size: 1.125rem; }
 
-a {
+.et_pb_text_inner a {
   border-bottom: 1px solid #328093;
   color: #328093;
   font-size: 1.125rem;
   text-decoration: none;
   transition: color .5s, border-bottom .5s; }
-  a:hover {
+  .et_pb_text_inner a:hover {
     border-bottom: 1px solid #244474;
     color: #244474; }
 
@@ -2619,6 +2620,54 @@ input {
         padding: 1rem 7rem !important; } }
     .btn-green:hover:after {
       content: none; }
+
+.btn-scroll {
+  background-image: url("data:image/svg+xml,%3Csvg width='38' height='23' viewBox='0 0 38 23' fill='none' xmlns='http://www.w3.org/2000/svg'%3E%3Cg filter='url(%23filter0_d)'%3E%3Cpath d='M5 1L18.5 13.5L33 1' stroke='white' stroke-width='2'/%3E%3C/g%3E%3Cdefs%3E%3Cfilter id='filter0_d' x='0.320618' y='0.242554' width='37.3323' height='22.5982' filterUnits='userSpaceOnUse' color-interpolation-filters='sRGB'%3E%3CfeFlood flood-opacity='0' result='BackgroundImageFix'/%3E%3CfeColorMatrix in='SourceAlpha' type='matrix' values='0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 127 0'/%3E%3CfeOffset dy='4'/%3E%3CfeGaussianBlur stdDeviation='2'/%3E%3CfeColorMatrix type='matrix' values='0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0.25 0'/%3E%3CfeBlend mode='normal' in2='BackgroundImageFix' result='effect1_dropShadow'/%3E%3CfeBlend mode='normal' in='SourceGraphic' in2='effect1_dropShadow' result='shape'/%3E%3C/filter%3E%3C/defs%3E%3C/svg%3E%0A");
+  background-position: center;
+  background-repeat: no-repeat;
+  background-size: cover;
+  color: transparent;
+  padding: 0 !important;
+  cursor: pointer;
+  height: 40px;
+  margin-top: 4.5rem;
+  margin-left: auto;
+  margin-right: auto;
+  width: 80px; }
+  .btn-scroll:hover {
+    background-color: transparent !important;
+    padding: 0 !important; }
+    .btn-scroll:hover:after {
+      content: none; }
+
+.banner-main {
+  align-items: center;
+  display: flex;
+  justify-content: center;
+  min-height: 79vh; }
+  .banner-main .et_pb_text_inner {
+    align-items: center;
+    display: flex;
+    flex-direction: column;
+    justify-content: center; }
+    .banner-main .et_pb_text_inner h1,
+    .banner-main .et_pb_text_inner h2,
+    .banner-main .et_pb_text_inner h3,
+    .banner-main .et_pb_text_inner h4,
+    .banner-main .et_pb_text_inner h5 {
+      text-transform: uppercase; }
+    .banner-main .et_pb_text_inner h1,
+    .banner-main .et_pb_text_inner h2,
+    .banner-main .et_pb_text_inner h3,
+    .banner-main .et_pb_text_inner h4,
+    .banner-main .et_pb_text_inner h5,
+    .banner-main .et_pb_text_inner p {
+      color: #fff; }
+    .banner-main .et_pb_text_inner p {
+      font-size: 30px;
+      max-width: 400px;
+      text-align: center;
+      line-height: 1.1; }
 
 .bg-black {
   background-color: #000; }
